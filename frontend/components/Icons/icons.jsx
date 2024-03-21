@@ -53,6 +53,24 @@ export const X_mark=()=>{
     )   
 }
 
+export const Node=()=>{
+  return(
+  <div className="text-white">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <path fill="#68A063" d="M64 48l72 104-72 104h144L64 48z"/>
+  <path fill="#3E863D" d="M128 152l56-80H72l56 80z"/>
+  <path fill="#43853D" d="M128 72l28 40-28 40-28-40z"/>
+  <path fill="#7AB843" d="M0 0v256h256V0H0zm224 224H32V32h192v192z"/>
+</svg>
+
+
+
+</div>
+  
+  )   
+}
+
+
 
 
 

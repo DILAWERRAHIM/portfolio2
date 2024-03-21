@@ -6,8 +6,11 @@ import Projects from '../components/Projects/Projects'
 import Skills from '../components/skills/Skills'
 import Recommendation from '../components/recommendations/recommendation'
 import About from '../components/About/about';
+import Add_recommendations from '../components/recommendations/add-recommendations/Add-recommendations';
+import Hire_me from '../components/Hireme/Hireme';
 
 const App = () => {
+  
   return (
     <div className='h-screen flex flex-col' >
      
@@ -27,6 +30,9 @@ const App = () => {
           <Route path='/projects' element={<Projects />} />
           <Route path='/skills' element={<Skills />} />
           <Route path='/recommendations' element={<Recommendation />} />
+          <Route path='/add-recommendations' element={<Add_recommendations />} />
+          <Route path='/hire-me' element={<Hire_me/>} />
+
 
            
         </Route>

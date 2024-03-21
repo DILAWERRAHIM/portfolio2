@@ -47,12 +47,28 @@ const Navbar = () => {
         </li>
 
         
-        <li className=''>
+        <li className='mx-2'>
         <NavLink
     to='/recommendations'
     className={({ isActive }) => (isActive ? 'border-b-2 border-white' : 'link')}
   >
     recommendations
+  </NavLink>
+        </li>
+        <li className='mx-2'>
+        <NavLink
+    to='/recommendations'
+    className={({ isActive }) => (isActive ? 'border-b-2 border-white' : 'link')}
+  >
+    
+  </NavLink>
+        </li>
+        <li className=''>
+        <NavLink
+    to='/recommendations'
+    className={({ isActive }) => (isActive ? 'border-b-2 border-white' : 'link')}
+  >
+   
   </NavLink>
         </li>
        
@@ -68,6 +84,7 @@ const Navbar = () => {
                   onClick={() => set_toggle(!toggle)}
                  
                   >  <Container/></li>)
+
 
             }
         {/* for smaller screen */}
@@ -116,6 +133,22 @@ const Navbar = () => {
     className={({ isActive }) => (isActive ? 'border-b-2 border-white' : 'link')}
   >
     recommendations
+  </NavLink>
+        </li>
+        <li className='m-2 my-6'>
+        <NavLink
+    to='/add-recommendations'
+    className={({ isActive }) => (isActive ? 'border-b-2 border-white' : 'link')}
+  >
+   Add recommendations
+  </NavLink>
+        </li>
+        <li className='m-2 my-6'>
+        <NavLink
+    to='/hire-me'
+    className={({ isActive }) => (isActive ? 'border-b-2 border-white' : 'link')}
+  >
+    Hire me
   </NavLink>
         </li>
        
