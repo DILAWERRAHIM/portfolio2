@@ -1,26 +1,19 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-import Header from '../header/header'
+import Header from "../header/header";
 
-
-
-const Home= () => {
+const Home = () => {
   return (
     <div>
       <section>
- 
-      <Header/>
-       
+        <Header />
       </section>
-       <section>
-        <Outlet/>
-       </section>
-
+      <section>
+        <Outlet />
+      </section>
     </div>
-   
-  
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
