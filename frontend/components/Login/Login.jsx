@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ReviewForm = () => {
+const ReviewForm = ({ setuser }) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -23,6 +23,7 @@ const ReviewForm = () => {
         navigate("/hire-me");
       } else {
         navigate("/add-recommendations");
+        setuser(true);
       }
     } catch (error) {
       console.log(error);

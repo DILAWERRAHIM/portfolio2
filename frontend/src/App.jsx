@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shared_layout from "../components/Home/shared_layout";
 import Home from "../components/Home/Home";
@@ -9,7 +9,9 @@ import About from "../components/About/about";
 import Add_recommendations from "../components/recommendations/add-recommendations/Add-recommendations";
 import Hire_me from "../components/Hireme/Hireme";
 import Login from "../components/Login/Login.jsx";
+import ProtectedRoute from "../components/recommendations/add-recommendations/ProtectedRoute.jsx";
 const App = () => {
+  const [user, setuser] = useState(false);
   return (
     <div className="h-screen flex flex-col">
       <BrowserRouter>
@@ -23,10 +25,14 @@ const App = () => {
             <Route path="/recommendations" element={<Recommendation />} />
             <Route
               path="/add-recommendations"
-              element={<Add_recommendations />}
+              element={
+                <ProtectedRoute user={user}>
+                  <Add_recommendations user={user} />
+                </ProtectedRoute>
+              }
             />
             <Route path="/hire-me" element={<Hire_me />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login setuser={setuser} />} />
           </Route>
         </Routes>
       </BrowserRouter>
