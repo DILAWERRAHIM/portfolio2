@@ -3,31 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 const Recommendations = () => {
   const [Data, setData] = useState();
-  const [User, setUser] = useState();
+
   const navigate = useNavigate();
   const handler_route = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/user");
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const jsonData = await response.json();
-      setUser(jsonData);
-
-      if (jsonData && jsonData.tasks) {
-        jsonData.tasks.forEach((task) => {
-          console.log(task.username);
-          if (!task.username) {
-            navigate("/hire-me");
-          } else {
-            navigate("/add-recommendations");
-          }
-        });
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    navigate("/login");
   };
 
   //  recommendations data
