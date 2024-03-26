@@ -1,15 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ReviewForm = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const url = `http://localhost:5000/user/Single/${username}/${password}`;
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!username || !email || !review) {
+
+    if (!username || !password) {
       alert("Please fill in all fields");
     }
     try {
+      const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error("error occured in fetching data");
+      }
+      const userdata = await res.json();
+
+      if (!userdata.tasks) {
+        navigate("/hire-me");
+      } else {
+        navigate("/add-recommendations");
+      }
     } catch (error) {
       console.log(error);
     }
