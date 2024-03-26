@@ -76,7 +76,7 @@ const Navbar = () => {
         )}
         {/* for smaller screen */}
 
-        <div className="block md:hidden">
+        <div className="block z-30 md:hidden">
           <ul
             className={`absolute ${toggle ? "left-[0%] " : "left-[-110%]"}
          top-[100%] transition-all duration-500 bg-black w-[100%]`}
@@ -130,16 +130,7 @@ const Navbar = () => {
                 recommendations
               </NavLink>
             </li>
-            <li className="m-2 my-6">
-              <NavLink
-                to="/add-recommendations"
-                className={({ isActive }) =>
-                  isActive ? "border-b-2 border-white" : "link"
-                }
-              >
-                Add recommendations
-              </NavLink>
-            </li>
+
             <li className="m-2 my-6">
               <NavLink
                 to="/hire-me"
