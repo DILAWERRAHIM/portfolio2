@@ -5,8 +5,30 @@ const User = () => {
   const [Data, setData] = useState("");
   const url = "http://localhost:5000/user";
 
+  const Add_user = async () => {
+    console.log("user adding button is working");
+  };
   const handleDelete = async (userId) => {
     // Implement deletion logic using the userId
+    const url = `http://localhost:5000/user/${userId}`;
+    try {
+      const res = await fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!res.ok) {
+        throw new Error("failed to delete data");
+      }
+      setData((prevData) => ({
+        ...prevData,
+        tasks: prevData.tasks.filter((user) => user._id !== userId),
+      }));
+      console.log("User deleted successfully");
+    } catch (error) {
+      console.log(error);
+    }
     console.log("Deleting user with ID:", userId);
   };
 
@@ -57,6 +79,10 @@ const User = () => {
             </tbody>
           </table>
         </div>
+        <button type="button" onClick={Add_user}>
+          {" "}
+          add user
+        </button>
       </div>
     </div>
   );
