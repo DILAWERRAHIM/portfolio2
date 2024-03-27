@@ -22,8 +22,12 @@ const ReviewForm = ({ setuser }) => {
       if (!userdata.tasks) {
         navigate("/hire-me");
       } else {
-        navigate("/add-recommendations");
-        setuser(true);
+        if (userdata.tasks.status === "admin") {
+          navigate("/adminpanel");
+        } else {
+          navigate("/add-recommendations");
+          setuser(true);
+        }
       }
     } catch (error) {
       console.log(error);

@@ -10,6 +10,7 @@ import Add_recommendations from "../components/recommendations/add-recommendatio
 import Hire_me from "../components/Hireme/Hireme";
 import Login from "../components/Login/Login.jsx";
 import ProtectedRoute from "../components/recommendations/add-recommendations/ProtectedRoute.jsx";
+import Header from "../adminPanel/Header/header.jsx";
 const App = () => {
   const [user, setuser] = useState(false);
   return (
@@ -18,7 +19,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route index element={<Shared_layout />} />
-
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
@@ -34,6 +34,7 @@ const App = () => {
             <Route path="/hire-me" element={<Hire_me />} />
             <Route path="/login" element={<Login setuser={setuser} />} />
           </Route>
+          <Route path="/adminpanel/*" element={<Header user={user} />} />
         </Routes>
       </BrowserRouter>
     </div>
