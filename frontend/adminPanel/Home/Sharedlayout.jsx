@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Delete } from "../../components/Icons/icons.jsx";
-
+import { useNavigate } from "react-router-dom";
 const User = () => {
+  const navigate = useNavigate();
   const [Data, setData] = useState("");
   const url = "http://localhost:5000/user";
 
   const Add_user = async () => {
-    console.log("user adding button is working");
+    navigate("add-user");
   };
   const handleDelete = async (userId) => {
     // Implement deletion logic using the userId

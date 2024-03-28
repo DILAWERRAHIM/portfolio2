@@ -12,6 +12,7 @@ import Login from "../components/Login/Login.jsx";
 import ProtectedRoute from "../components/recommendations/add-recommendations/ProtectedRoute.jsx";
 import User from "../adminPanel/Home/User.jsx";
 import Sharedlayout from "../adminPanel/Home/Sharedlayout.jsx";
+import Add_user from "../adminPanel/Home/Add-user";
 import Arecommendations from "../adminPanel/Home/recommendations.jsx";
 const App = () => {
   const [user, setuser] = useState(false);
@@ -38,6 +39,8 @@ const App = () => {
           </Route>
           <Route path="/adminpanel/" element={<User />}>
             <Route index element={<Sharedlayout />} />
+            <Route path="add-user" element={<Add_user />} />
+
             <Route path="arecommendations" element={<Arecommendations />} />
           </Route>
         </Routes>

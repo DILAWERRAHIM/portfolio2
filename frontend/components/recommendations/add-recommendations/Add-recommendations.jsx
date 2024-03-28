@@ -20,7 +20,7 @@ const ReviewForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ username, email, review }),
+          body: JSON.stringify({ username, email, review}),
         },
       );
 
