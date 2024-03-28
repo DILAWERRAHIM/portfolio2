@@ -10,6 +10,7 @@ const User = () => {
   };
   const handleDelete = async (userId) => {
     // Implement deletion logic using the userId
+
     const url = `http://localhost:5000/user/${userId}`;
     try {
       const res = await fetch(url, {
@@ -25,11 +26,9 @@ const User = () => {
         ...prevData,
         tasks: prevData.tasks.filter((user) => user._id !== userId),
       }));
-      console.log("User deleted successfully");
     } catch (error) {
       console.log(error);
     }
-    console.log("Deleting user with ID:", userId);
   };
 
   useEffect(() => {
@@ -50,7 +49,7 @@ const User = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center ">
       <div className="max-w-screen-md my-9 ">
         <h2 className="text-2xl font-bold mb-4">User Data</h2>
         <div className="overflow-x-auto my-5">

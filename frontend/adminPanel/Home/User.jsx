@@ -3,7 +3,7 @@ import Header from "../Header/header";
 import { Outlet } from "react-router-dom";
 const User = () => {
   return (
-    <div>
+    <div className="flex justify-items-center flex-col items-center">
       <section>
         <Header />
       </section>
