@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { Delete, Edit } from "../../components/Icons/icons.jsx";
 
 const User = () => {
@@ -25,6 +25,10 @@ const User = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleEdit = async (userId) => {
+    console.log(userId);
   };
 
   useEffect(() => {
@@ -71,7 +75,10 @@ const User = () => {
                   <td className="px-4 py-2 border border-gray-300">
                     {user.review}
                   </td>
-                  <td className="px-4 py-2 border border-gray-300">
+                  <td
+                    onClick={() => handleEdit(user._id)}
+                    className="px-4 py-2 border border-gray-300"
+                  >
                     <Edit />
                   </td>
 
