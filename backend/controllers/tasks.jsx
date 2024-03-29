@@ -58,10 +58,27 @@ const getAll_recommendations = asyncWrapper(async (req, res) => {
   }
 });
 
-const Edit_recommendatons = asyncWrapper(async (req, res) => {
-  const { id } = req.params;
+const getSingle_recommendations = asyncWrapper(async (req, res) => {
+  const {id}=req.params
   try {
-    const tasks = await recommendations.findOneAndUpdate(id, req.body);
+    const tasks = await recommendations.findOne({_id:id});
+    res.status(200).json({ tasks });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+});
+
+
+
+const Edit_recommendations = asyncWrapper(async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const tasks = await recommendations.findOneAndUpdate(
+      { _id: id },
+      req.body,
+      { new: true },
+    );
     if (!tasks) {
       return res.status(400).send(`product with id : ${id} not found `);
     }
@@ -71,8 +88,6 @@ const Edit_recommendatons = asyncWrapper(async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 });
-
-// delete recommendations
 const delete_recommendations = asyncWrapper(async (req, res) => {
   try {
     const { id } = req.params;
@@ -110,5 +125,6 @@ module.exports = {
   delete_recommendations,
   delete_user,
   getSingeUser,
-  Edit_recommendatons,
+  getSingle_recommendations,
+  Edit_recommendations
 };

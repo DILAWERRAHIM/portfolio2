@@ -1,10 +1,10 @@
 import React, { useEffect, useId, useState } from "react";
 import { Delete, Edit } from "../../components/Icons/icons.jsx";
-
+import { useNavigate } from "react-router-dom";
 const User = () => {
   const [Data, setData] = useState("");
   const url = "http://localhost:5000/user/recommendations";
-
+  const navigate = useNavigate();
   const handleDelete = async (userId) => {
     // Implement deletion logic using the userId
     const url2 = `${url}/${userId}`;
@@ -28,7 +28,7 @@ const User = () => {
   };
 
   const handleEdit = async (userId) => {
-    console.log(userId);
+    navigate(`../edit-recommendations?userid=${userId}`);
   };
 
   useEffect(() => {

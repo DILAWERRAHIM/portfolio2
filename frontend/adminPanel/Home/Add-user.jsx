@@ -37,9 +37,9 @@ const ReviewForm = ({ setuser }) => {
     <div className=" flex justify-center items-center relative  h-full">
       <form
         onSubmit={handleSubmit}
-        className=" mt-7 p-6 md:w-[40%] w-[90%]   rounded-md ring-gray-200 ring-2"
+        className=" mt-7 p-6 md:w-[100%] w-[90%]   rounded-md ring-gray-200 ring-2"
       >
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
+        <h2 className="text-2xl font-bold mb-4">Add User</h2>
         <div className="mb-4">
           <label htmlFor="username" className="block text-gray-700">
             Username:

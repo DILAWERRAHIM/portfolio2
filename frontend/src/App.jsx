@@ -14,6 +14,7 @@ import User from "../adminPanel/Home/User.jsx";
 import Sharedlayout from "../adminPanel/Home/Sharedlayout.jsx";
 import Add_user from "../adminPanel/Home/Add-user";
 import Arecommendations from "../adminPanel/Home/recommendations.jsx";
+import Edit_recommendaions from "../adminPanel/Home/Edit-recommendaions.jsx";
 const App = () => {
   const [user, setuser] = useState(false);
   return (
@@ -40,8 +41,11 @@ const App = () => {
           <Route path="/adminpanel/" element={<User />}>
             <Route index element={<Sharedlayout />} />
             <Route path="add-user" element={<Add_user />} />
-
             <Route path="arecommendations" element={<Arecommendations />} />
+            <Route
+              path="edit-recommendations"
+              element={<Edit_recommendaions />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

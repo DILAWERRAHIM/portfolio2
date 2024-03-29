@@ -25,14 +25,6 @@ const Header = () => {
               recommendations
             </NavLink>
           </li>
-          <li className="mx-2">
-            <NavLink
-              to="/recommendations"
-              className={({ isActive }) =>
-                isActive ? "border-b-2 border-white" : "link"
-              }
-            ></NavLink>
-          </li>
         </ul>
       </div>
     </div>

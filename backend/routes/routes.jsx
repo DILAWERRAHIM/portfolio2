@@ -9,7 +9,8 @@ const {
   delete_recommendations,
   delete_user,
   getSingeUser,
-  Edit_recommendatons,
+  Edit_recommendations,
+  getSingle_recommendations,
 } = require("../controllers/tasks.jsx");
 
 //  routes for user
@@ -24,6 +25,7 @@ router
 router
   .route("/user/recommendations/:id")
   .delete(delete_recommendations)
-  .put(Edit_recommendatons);
+  .get(getSingle_recommendations)
+  .put(Edit_recommendations);
 
 module.exports = router;
