@@ -20,7 +20,7 @@ const App = () => {
   const [user, setuser] = useState(false);
   const [admin, setAdmin] = useState(false);
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-[100%] flex flex-col">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>

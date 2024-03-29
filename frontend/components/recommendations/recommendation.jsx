@@ -35,16 +35,14 @@ const Recommendations = () => {
   return (
     <div className="w-[100%]  flex h-5/6  overflow-auto items-center justify-center">
       <div
-        className=" p-4 mt-12 
+        className=" md:p-4 mt-12 
      md:w-[90%]"
       >
         <h3
           className="text-[#313178]"
           style={{
-            fontFamily: "'Madimi One',sans-serif",
-            fontWeight: 400,
             fontStyle: "normal",
-            fontSize: "40px",
+            fontSize: "30px",
           }}
         >
           {" "}

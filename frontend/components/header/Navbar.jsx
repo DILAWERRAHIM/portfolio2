@@ -65,11 +65,11 @@ const Navbar = () => {
       </div>
       <div className="block  md:hidden">
         {toggle ? (
-          <li className="m-2 list-none" onClick={() => set_toggle(!toggle)}>
+          <li className="md:m-2 list-none" onClick={() => set_toggle(!toggle)}>
             <X_mark />{" "}
           </li>
         ) : (
-          <li className="m-2 list-none" onClick={() => set_toggle(!toggle)}>
+          <li className="md:m-2 list-none" onClick={() => set_toggle(!toggle)}>
             {" "}
             <Container />
           </li>

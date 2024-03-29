@@ -17,7 +17,7 @@ const Name = () => {
         <Email />
         <a
           href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
-          className="text-sm mx-1"
+          className="text-sm  mx-1"
         >
           {" "}
           aliwebdeveloper04@gmail.com
