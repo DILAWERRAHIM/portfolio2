@@ -15,8 +15,10 @@ import Sharedlayout from "../adminPanel/Home/Sharedlayout.jsx";
 import Add_user from "../adminPanel/Home/Add-user";
 import Arecommendations from "../adminPanel/Home/recommendations.jsx";
 import Edit_recommendaions from "../adminPanel/Home/Edit-recommendaions.jsx";
+import PrivateRoute from "../adminPanel/Home/PrivateRoute";
 const App = () => {
   const [user, setuser] = useState(false);
+  const [admin, setAdmin] = useState(false);
   return (
     <div className="h-screen flex flex-col">
       <BrowserRouter>
@@ -36,9 +38,19 @@ const App = () => {
               }
             />
             <Route path="/hire-me" element={<Hire_me />} />
-            <Route path="/login" element={<Login setuser={setuser} />} />
+            <Route
+              path="/login"
+              element={<Login setuser={setuser} setAdmin={setAdmin} />}
+            />
           </Route>
-          <Route path="/adminpanel/" element={<User />}>
+          <Route
+            path="/adminpanel/"
+            element={
+              <PrivateRoute admin={admin}>
+                <User admin={admin} />
+              </PrivateRoute>
+            }
+          >
             <Route index element={<Sharedlayout />} />
             <Route path="add-user" element={<Add_user />} />
             <Route path="arecommendations" element={<Arecommendations />} />

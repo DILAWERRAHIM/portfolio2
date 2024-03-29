@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ReviewForm = ({ setuser }) => {
+const ReviewForm = ({ setuser, setAdmin }) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,6 +24,7 @@ const ReviewForm = ({ setuser }) => {
       } else {
         if (userdata.tasks.status === "admin") {
           navigate("/adminpanel");
+          setAdmin(true);
         } else {
           navigate("/add-recommendations");
           setuser(true);
