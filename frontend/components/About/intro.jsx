@@ -2,7 +2,7 @@ import React from "react";
 
 const Intro = () => {
   return (
-    <div className="md:col-span-2 p-4">
+    <div className="md:col-span-2 col-span-1 p-4">
       <div className="md:w-[100%] mx-auto mb-4">
         <h1
           style={{
