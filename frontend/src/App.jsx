@@ -16,6 +16,7 @@ import Add_user from "../adminPanel/Home/Add-user";
 import Arecommendations from "../adminPanel/Home/recommendations.jsx";
 import Edit_recommendaions from "../adminPanel/Home/Edit-recommendaions.jsx";
 import PrivateRoute from "../adminPanel/Home/PrivateRoute";
+import Hireme from "../components/Hireme/Hireme";
 const App = () => {
   const [user, setuser] = useState(false);
   const [admin, setAdmin] = useState(false);
@@ -29,6 +30,8 @@ const App = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/recommendations" element={<Recommendation />} />
+            <Route path="/Hireme" element={<Hireme />} />
+
             <Route
               path="/add-recommendations"
               element={

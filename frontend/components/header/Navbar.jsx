@@ -55,11 +55,14 @@ const Navbar = () => {
           </li>
           <li className="mx-2">
             <NavLink
-              to="/recommendations"
+              to="/hire-me"
               className={({ isActive }) =>
                 isActive ? "border-b-2 border-white" : "link"
               }
-            ></NavLink>
+            >
+              {" "}
+              Hire Me
+            </NavLink>
           </li>
         </ul>
       </div>
