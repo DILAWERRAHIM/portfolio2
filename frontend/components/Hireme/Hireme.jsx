@@ -1,6 +1,6 @@
 import React from "react";
 import Hire_Intro from "./Hire_intro";
-import Form from "./Client_Intro_form";
+import Final_form from "./Final_form";
 const Hireme = () => {
   return (
     <div className="w-[100%]     flex items-center justify-center">
@@ -9,7 +9,7 @@ const Hireme = () => {
      md:w-[90%]"
       >
         <Hire_Intro />
-        <Form />
+        <Final_form />
       </div>
     </div>
   );
