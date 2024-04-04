@@ -10,7 +10,6 @@ const Edit_recommendaions = () => {
     email: "",
     review: "",
   });
-  const [Popup, setPopup] = useState();
   const location = useLocation();
   const [userId, setUserId] = useState(null);
   useEffect(() => {
@@ -126,11 +125,6 @@ const Edit_recommendaions = () => {
           </button>
         </div>
       </form>
-      {Popup && (
-        <div className="z-20 absolute  bg-green-500 text-white px-4 py-2 rounded-md mr-4 mt-4">
-          Thanks for your recommendations!
-        </div>
-      )}
     </div>
   );
 };

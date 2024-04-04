@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Client_form from "./Client_form";
 import Projects_form from "./Projects_form";
 const Final_form = () => {
-  const [showProjectfrom, setProjectForm] = useState(true);
+  const [showProjectfrom, setProjectForm] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,12 +16,16 @@ const Final_form = () => {
     responsive: false,
     static: false,
     telling: false,
+    times: "",
+    budget: "",
+    audience: "",
+    objective: "",
+    additional: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.location) {
-      console.log("Please fill all filed");
       return;
     }
     setProjectForm(true);
@@ -31,7 +35,7 @@ const Final_form = () => {
   };
 
   return (
-    <div className="  w-[70%] mx-auto p-5">
+    <div className=" w-[95%] md:w-[70%] mx-auto p-5">
       <form onSubmit={handleSubmit} className="space-y-4">
         <Client_form formData={formData} setFormData={setFormData} />
 
