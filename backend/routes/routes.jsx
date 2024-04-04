@@ -11,8 +11,11 @@ const {
   getSingeUser,
   Edit_recommendations,
   getSingle_recommendations,
+  Create_Hire,
+  gethire,
 } = require("../controllers/tasks.jsx");
-
+// routes for hire form
+router.route("/user/hire").post(Create_Hire).get(gethire);
 //  routes for user
 router.route("/user").get(getAllUser).post(Create_Username);
 router.route("/user/Single/:name/:password").get(getSingeUser);

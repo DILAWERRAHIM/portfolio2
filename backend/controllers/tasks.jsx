@@ -1,5 +1,26 @@
 const { asyncWrapper } = require("../config.js");
-const { username, recommendations } = require("../models/schemas.jsx");
+const { username, recommendations, hire } = require("../models/schemas.jsx");
+
+// creates hireme schema
+const Create_Hire = asyncWrapper(async (req, res) => {
+  try {
+    const NewUser = await hire.create(req.body);
+
+    res.status(200).json({ NewUser });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+});
+
+// get hire form
+const gethire = asyncWrapper(async (req, res) => {
+  try {
+    const tasks = await hire.find({});
+    res.status(200).json({ tasks });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+});
 
 //  creates username collections
 
@@ -59,16 +80,14 @@ const getAll_recommendations = asyncWrapper(async (req, res) => {
 });
 
 const getSingle_recommendations = asyncWrapper(async (req, res) => {
-  const {id}=req.params
+  const { id } = req.params;
   try {
-    const tasks = await recommendations.findOne({_id:id});
+    const tasks = await recommendations.findOne({ _id: id });
     res.status(200).json({ tasks });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
 });
-
-
 
 const Edit_recommendations = asyncWrapper(async (req, res) => {
   const { id } = req.params;
@@ -126,5 +145,7 @@ module.exports = {
   delete_user,
   getSingeUser,
   getSingle_recommendations,
-  Edit_recommendations
+  Edit_recommendations,
+  Create_Hire,
+  gethire,
 };
